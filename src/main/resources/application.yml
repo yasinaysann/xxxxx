@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: project-x
+  security:
+    user:
+      name: admin
+      password: 1234
+      roles: ADMIN
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 1234
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+
+    hikari:
+      maximum-pool-size: 200
+      minimum-idle: 30
+      idle-timeout: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+
+jwt:
+  secret: abc123
+  expiration: 120000
+server:
+  servlet:
+    context-path: /api
+logging:
+  level:
+    root: debug
+
